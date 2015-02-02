@@ -13,9 +13,10 @@ ft_bzero:
 		push	ebx
 		push	ecx
 
-		lea		eax, [ebp + 8]
+		mov		ebx, [ebp + 8]
 		mov		ecx, [ebp + 12]
 
+		
 		cmp		ecx, 0
 		je 		done
 		jne		whileloop
@@ -26,13 +27,12 @@ whileloop:
 
 putzero:
 		;dump_regs 1
-		mov		byte [eax], 0
-		dump_mem 2, eax, 1
-		inc 	eax
+		dump_mem 1, ebx, 1
+		mov		byte [ebx], 0
+		inc 	ebx
 		dec		ecx
 		jmp		short whileloop
 done:
-		;mov		eax, 0
 		pop		ecx
 		pop		ebx
 		pop		ebp
