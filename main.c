@@ -89,12 +89,12 @@ void		test_isprint(void)
 
 void		test_toupper(void)
 {
-	printf("%c\n", ft_toupper(99));
+	printf("%c\n", ft_toupper(12390));
 }
 
 void		test_tolower(void)
 {
-	printf("%c\n", ft_tolower(65));
+	printf("%c\n", ft_tolower(12390));
 }
 
 void		test_puts(void)
@@ -122,7 +122,57 @@ void		test_strlen(void)
 	str[3] = '\0';
 	// str = 0;
 	// ft_strlen(str);
-	printf("%d\n", ft_strlen(str));
+	printf("%d\n", (int)ft_strlen(str));
+}
+
+void		test_strdup(void)
+{
+	char	*str1;
+	char	*str2;
+
+	str1 = (char *)malloc(8 * sizeof(char));
+	str1[0] = 'b';
+	str1[1] = 'o';
+	str1[2] = 'y';
+	str1[3] = '\0';
+	// str = 0;
+	str2 = ft_strdup(str1);
+	put_str(str2);
+}
+
+void		test_memset(void)
+{
+	char	*str;
+	int 	c;
+
+	c = 12391;
+	str = (char *)malloc(8 * sizeof(char));
+	str[0] = 'b';
+	str[1] = 'o';
+	str[2] = 'y';
+	str[3] = '\0';
+	str = ft_memset(str, c, 2);
+	put_str(str);
+}
+
+void		test_memcpy(void)
+{
+	char	*str1;
+	char	*str2;
+
+	str1 = (char *)malloc(8 * sizeof(char));
+	str2 = (char *)malloc(8 * sizeof(char));
+	str1[0] = 'b';
+	str1[1] = 'o';
+	str1[2] = 'y';
+	str1[3] = '\0';
+	str2[0] = 'k';
+	str2[1] = 'a';
+	str2[2] = 's';
+	str2[3] = '\0';
+	// str = 0;
+	str1 = ft_memcpy(str1, str2, 3);
+	put_str(str1);
 }
 
 int			main(void)
@@ -136,7 +186,10 @@ int			main(void)
 	// test_toupper();
 	// test_tolower();
 	// test_puts();
-	test_strlen();
+	// test_strlen();
+	// test_memset();
+	// test_memcpy();
+	test_strdup();
 	return (0);
 }
 

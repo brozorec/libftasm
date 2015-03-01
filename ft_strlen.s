@@ -6,14 +6,12 @@ _ft_strlen:
 		xor		rax, rax
 		cmp		rdi, 0
 		je		done
-		jmp		count
-
-count:
-		cmp		byte [rdi], 0
-		je		done
-		inc		rax
-		inc		rdi
-		jmp		count
-
+		mov		rcx, 0xffffffffffffffff
+		cld
+		repne	scasb
+		mov		r10, 0xfffffffffffffffe
+		sub		r10, rcx
+		mov		rax, r10
+		jmp		done
 done:
 		ret
