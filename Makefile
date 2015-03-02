@@ -6,7 +6,7 @@
 #    By: bbarakov <bbarakov@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/28 15:50:06 by bbarakov          #+#    #+#              #
-#    Updated: 2015/03/01 18:58:16 by bbarakov         ###   ########.fr        #
+#    Updated: 2015/03/02 18:58:14 by bbarakov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRC=	ft_bzero.s \
 		ft_memset.s \
 		ft_memcpy.s \
 		ft_strdup.s \
+		ft_cat.s \
 
 OBJ=	$(SRC:.s=.o)
 

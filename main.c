@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <fcntl.h>
 #include "libfts.h"
 
 // void		*ft_bzero(char *str, int size);
@@ -125,21 +126,6 @@ void		test_strlen(void)
 	printf("%d\n", (int)ft_strlen(str));
 }
 
-void		test_strdup(void)
-{
-	char	*str1;
-	char	*str2;
-
-	str1 = (char *)malloc(8 * sizeof(char));
-	str1[0] = 'b';
-	str1[1] = 'o';
-	str1[2] = 'y';
-	str1[3] = '\0';
-	// str = 0;
-	str2 = ft_strdup(str1);
-	put_str(str2);
-}
-
 void		test_memset(void)
 {
 	char	*str;
@@ -162,17 +148,55 @@ void		test_memcpy(void)
 
 	str1 = (char *)malloc(8 * sizeof(char));
 	str2 = (char *)malloc(8 * sizeof(char));
-	str1[0] = 'b';
-	str1[1] = 'o';
-	str1[2] = 'y';
-	str1[3] = '\0';
+	// str1[0] = 'b';
+	// str1[1] = 'o';
+	// str1[2] = 'y';
+	// str1[3] = '\0';
 	str2[0] = 'k';
 	str2[1] = 'a';
 	str2[2] = 's';
-	str2[3] = '\0';
+	str2[3] = 'p';
+	str2[4] = '\0';
 	// str = 0;
-	str1 = ft_memcpy(str1, str2, 3);
+	str1 = ft_memcpy(str1, str2, 4);
 	put_str(str1);
+}
+
+void		test_strdup(void)
+{
+	char	*str1;
+	char	*str2;
+
+	str1 = (char *)malloc(10 * sizeof(char));
+	str1[0] = 'o';
+	str1[1] = 'o';
+	str1[2] = 'o';
+	str1[3] = 'a';
+	str1[4] = 's';
+	str1[5] = 't';
+	str1[6] = 'w';
+	str1[7] = 'i';
+	str1[8] = 'o';
+	str1[9] = '\0';
+	str2 = ft_strdup(str1);
+	// printf("%s\n", str2);
+	put_str(str2);
+}
+
+void		test_cat(void)
+{
+	// int 	fd;
+
+	// if ((fd = open("./scratch", O_RDONLY)) == -1)
+	// {
+	// 	put_str("error open");
+	// }
+	// ft_cat(0);
+	// close(fd);
+	char	buff[2098];
+
+	read(1, buff, 100);
+	write(1, buff, 100);
 }
 
 int			main(void)
@@ -189,7 +213,8 @@ int			main(void)
 	// test_strlen();
 	// test_memset();
 	// test_memcpy();
-	test_strdup();
+	// test_strdup();
+	test_cat();
 	return (0);
 }
 
