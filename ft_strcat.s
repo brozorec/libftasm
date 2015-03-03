@@ -16,12 +16,12 @@ go_to_the_end_of_s1:
 		jmp		go_to_the_end_of_s1
 
 cat_s2:
+		cmp		byte [rsi], 0x00
+		je 		done
 		mov		rbx, [rsi]
 		mov		[rdi], rbx
 		inc		rsi
 		inc		rdi
-		cmp		byte [rsi], 0x00
-		je 		done
 		jmp		cat_s2
 
 done:

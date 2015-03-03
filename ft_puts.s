@@ -5,6 +5,7 @@ section		.text
 _ft_puts:
 		cmp		rdi, 0
 		je		put_null
+		jmp		put
 put:
 		cmp		byte [rdi], 0x00
 		je		put_newline

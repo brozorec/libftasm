@@ -3,6 +3,7 @@ default	rel
 section		.text
 			global	_ft_strlen
 _ft_strlen:
+		push	r10
 		xor		rax, rax
 		cmp		rdi, 0
 		je		done
@@ -14,4 +15,5 @@ _ft_strlen:
 		mov		rax, r10
 		jmp		done
 done:
+		pop		r10
 		ret

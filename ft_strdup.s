@@ -7,7 +7,6 @@ section		.text
 			global	_ft_strdup
 _ft_strdup:
 		push	r8
-		push	rcx
 		xor		rax, rax
 		cmp		rdi, 0
 		je		done
@@ -28,6 +27,5 @@ _ft_strdup:
 		jmp		done
 
 done:
-		pop		rcx
 		pop		r8
 		ret

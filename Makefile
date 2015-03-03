@@ -6,11 +6,11 @@
 #    By: bbarakov <bbarakov@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/28 15:50:06 by bbarakov          #+#    #+#              #
-#    Updated: 2015/03/02 18:58:14 by bbarakov         ###   ########.fr        #
+#    Updated: 2015/03/03 18:32:43 by bbarakov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=	libfts.a
+NAME=	libft.a
 
 SRC=	ft_bzero.s \
 		ft_strcat.s \
@@ -27,11 +27,15 @@ SRC=	ft_bzero.s \
 		ft_memcpy.s \
 		ft_strdup.s \
 		ft_cat.s \
+		ft_putchar.s \
+		ft_putstr.s \
+		ft_strcpy.s \
+		ft_strchr.s \
+		ft_strnew.s \
 
 OBJ=	$(SRC:.s=.o)
 
 all: $(NAME)
-	@gcc -g -Wall -Wextra -Werror main.c -L. -lfts && ./a.out
 
 $(NAME): $(OBJ)
 	@ar rc $@ $^
