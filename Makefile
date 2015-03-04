@@ -6,11 +6,11 @@
 #    By: bbarakov <bbarakov@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/02/28 15:50:06 by bbarakov          #+#    #+#              #
-#    Updated: 2015/03/03 18:32:43 by bbarakov         ###   ########.fr        #
+#    Updated: 2015/03/04 15:43:39 by bbarakov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=	libft.a
+NAME=	libfts.a
 
 SRC=	ft_bzero.s \
 		ft_strcat.s \
@@ -32,6 +32,7 @@ SRC=	ft_bzero.s \
 		ft_strcpy.s \
 		ft_strchr.s \
 		ft_strnew.s \
+		ft_memchr.s \
 
 OBJ=	$(SRC:.s=.o)
 
